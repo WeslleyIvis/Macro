@@ -1,5 +1,44 @@
 import PySimpleGUI as sg
-import Script as Macro
+#import script as Macro
+from time import sleep
+from random import randint
+import pyautogui
+
+class Macro:
+  def __init__(self,value_start,stop,hotkey,time_hotkey):
+    self.value_start = int(value_start)
+    self.stop = int(stop)
+    self.hotkey = hotkey
+    self.time_hotkey = time_hotkey
+    self.COUNT_TIME = []
+    self.COUNT_STOP = []
+
+  def event(self, value:bool):
+    while value:
+      #print('start')
+      sleep(self.value_start)
+      self.value_start = self.rand_time(self.time_hotkey)
+      self.append_time()
+      self.start_hotkey()
+
+      if sum(self.COUNT_STOP) >= self.stop:
+        break
+
+  def append_time(self):
+    self.COUNT_TIME.append(self.value_start)
+    self.COUNT_STOP.append(self.value_start)
+
+  def start_hotkey(self):
+    if sum(self.COUNT_TIME) >= self.time_hotkey:
+      pyautogui.hotkey(self.hotkey)
+    self.COUNT_TIME.clear()
+
+  def rand_time(self, value:int):
+    value += randint(-10, 10)
+    return value
+
+  def init(self, true_false:bool):
+    self.event(true_false)
 
 sg.theme('darkPurple2')
 
@@ -45,20 +84,22 @@ while True:
     START = True
   else: START = False
 
-  HOTEY_1 = Macro
+  #HOTEY_1 = Macro()
+  
   if START:
-    HOTEY_1.Macro.__init__
-    (values["-TIME_START-"],
-     values["-HOTKEY_1-"], 
-     values["-HOTKEY_TIME_1-"],
-     values["-TIME_STOP-"])
+    HOTEY_1 = Macro(value_start = values["-TIME_START-"],
+     stop = values["-HOTKEY_1-"], 
+     hotkey = values["-HOTKEY_TIME_1-"],
+     time_hotkey = int(values["-TIME_STOP-"])
+    )
+    
 
     print(values["-TIME_START-"])
 
-    HOTEY_1.Macro.event(HOTEY_1, START)
+    HOTEY_1.event(START)
 
   
-  print(HOTEY_1.Macro.rand_time(20))
+  print(HOTEY_1.rand_time(20))
 
   if values == None or event == sg.WIN_CLOSED:
     break
