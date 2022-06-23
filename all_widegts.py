@@ -113,7 +113,7 @@ def make_window(theme=None):
         ],
         [name('Horizontal Separator'), sg.HSep()],
         [name('Vertical Separator'), sg.VSep()],
-        [name('Frame'), sgA.Frame('Frame', [[sg.T(s=15)]])],
+        [name('Frame'), sg.Frame('Frame', [[sg.T(s=15)]])],
         [name('Column'), sg.Column([[sg.T(s=15)]])],
         [
             name('Tab, TabGroup'),
