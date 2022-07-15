@@ -7,6 +7,7 @@ from random import randint
 sg.theme('Dark Grey 13')
 
 layout_hotkey = [
+	
 	[sg.Push(), sg.Text('Hotkey'), sg.Push()],
 	[sg.Text('Hotkey 1'), sg.Input(key='-HOTKEY_0-',
 	s=10, 
@@ -49,13 +50,19 @@ layout_time_start = [
 		default_text=1, )],
 ]
 
+layout_macro_loot = [
+	[sg.Push(), sg.Text('Window'), sg.Push()],
+	[sg.Input(key='')]
+]
+
 layout = [
-	#[sg.Image(filename='simpe.png')],
-	
 	[sg.StatusBar(text='StatusBar: ', text_color='Green',  s=10, key='-STATUS-'), sg.StatusBar('Threads: ', key='-ON-THREADS-')],
 	[sg.Output(size=(70,12))],
 	[sg.Column(layout_hotkey), sg.VSeparator(), sg.Column(layout_time), sg.VSeparator(), sg.Column(layout_time_start)],
-	[sg.Button('Start', p=10, s=10), sg.Button('Stop', s=10)]
+	[sg.Button('Start', p=10, s=10), sg.Button('Stop', s=10)],
+	[sg.HSeparator()],
+	[layout_macro_loot]
+
 ]
 
 window = sg.Window(
@@ -103,7 +110,7 @@ def vary_time(seconds, min, max):
 while True:
 	event, values = window.read()	
 	#print(event, values) 
-
+    
 	if event in (sg.WIN_CLOSED, 'Exit'):
 		break
 
@@ -129,15 +136,6 @@ while True:
 	for x in seconds_hotkey:
 		if event == 'Start' and type(seconds_hotkey[x]) == int and type(deley_start) == int:
 				starter = True
-		else:
-			starter = False
-			deley_start = 0
-			seconds_hotkey = {
-			'value_0': 0,
-			'value_1': 0,
-			'value_2': 0,
-			'value_3': 0
-			}
 
 	if event.startswith('Start') and starter == True:		
 		for x in range(len(hotkey)):
