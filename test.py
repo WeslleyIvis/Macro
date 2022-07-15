@@ -1,9 +1,29 @@
-import time
+import pyautogui
+from time import sleep
 
-current_time = time.localtime()
-timestamp = time.strftime("%I:%m:%S")
-print(timestamp)
+sleep(2)
+currentMouseX, currentMouseY = pyautogui.position()
+print(currentMouseX, currentMouseY)
 
-# for i in range(5):
-#   time.sleep(1)
-#   print(time.localtime())
+sleep(1)
+pyautogui.moveTo(10/100 * currentMouseX + currentMouseX, currentMouseY)
+sleep(1)
+pyautogui.moveTo(10/100 * currentMouseX + currentMouseX, currentMouseY - 15/100 * currentMouseY)
+sleep(1)
+pyautogui.moveTo(currentMouseX, currentMouseY - 15/100 * currentMouseY)
+sleep(1)
+pyautogui.moveTo(currentMouseX - 7/100 * currentMouseX, currentMouseY - 15/100 * currentMouseY)
+sleep(1)
+pyautogui.moveTo(currentMouseX - 7/100 * currentMouseX, currentMouseY)
+sleep(1)
+pyautogui.moveTo(currentMouseX - 7/100 * currentMouseX, currentMouseY + 15/100 * currentMouseY) 
+sleep(1)
+pyautogui.moveTo(currentMouseX, currentMouseY + 15/100 * currentMouseY) 
+sleep(1)
+pyautogui.moveTo(currentMouseX + 7/100 * currentMouseX, currentMouseY + 15/100 * currentMouseY) 
+
+
+screenWidth, screenHeight = pyautogui.size()
+# print(screenWidth, screenHeight)
+# print(50/100 * screenWidth, 50/100 * screenHeight)
+#pyautogui.click()
