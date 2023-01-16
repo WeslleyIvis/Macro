@@ -1,6 +1,7 @@
 # Macro
 
-Macro feito para aperta botões em tempo determinado, os botões funcionam em multithreading.
+Macro feito para aperta botões em tempo determinado, os botões funcionam em multithreading. <br>
+Toda vez que a ação ocorrer, aparecerar no console o tempo e quantidade de execuções do botão executado.<br>
 PyautoGUI, PysimpleGUI
 
 
