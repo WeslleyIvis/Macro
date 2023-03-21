@@ -1,6 +1,6 @@
 # Macro
 
-Macro feito em Python, usando as bibliotecas PySimpleGUI para a interface gráfica e PyAutoGUI para o fundamento do programa. Esse macro consiste em apertar botões em tempo determinado pelo usuario, podendo ter até 4 botões em uso a o mesmo tempo, quando uma ação ocorre, é anúnciado no console do macro o botão precionado e a quantidade de vezes que essa ação já ocorreu
+Macro feito em Python, usando as bibliotecas PySimpleGUI para a interface gráfica e PyAutoGUI. Esse macro consiste em apertar botões em um tempo determinado pelo usuario, podendo ter até 4 ações em uso ao mesmo tempo, quando uma ação ocorre, é anúnciado no console do macro o botão precionado e a quantidade de vezes que essa ação ocorreu.
 
 <br>
 
