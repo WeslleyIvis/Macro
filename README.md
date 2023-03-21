@@ -14,7 +14,7 @@ Para anular o funcionamento de uma hotkey, apenas deixe o valor do time = 0
 
 ## Hotkey values
 <ul> 
-  <li>Two values: Alt 8</li>
+  <li>Two values</li>
 </ul> 
 
 ![image](https://user-images.githubusercontent.com/79803635/215207168-3b66f8a5-8777-45d3-9d42-179c27966c05.png)
