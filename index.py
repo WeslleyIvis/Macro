@@ -62,7 +62,6 @@ layout = [
 	[sg.Button('Start', p=10, s=10), sg.Button('Stop', s=10)],
 	[sg.HSeparator()],
 	[layout_macro_loot]
-
 ]
 
 window = sg.Window(
